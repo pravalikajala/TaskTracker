@@ -1,0 +1,13 @@
+<form  [formGroup]="myForm">
+    <div class="form-group">
+        <label for="myTask" class="form-label">Task</label>
+        <input type="text" id="myTask" class="form-control" placeholder="Add Any Task" formControlName="myTask">
+    </div>
+    <div class="form-group">
+        <label for="myDate" class="form-label">Date</label>
+        <input type="date" id="myDate" class="form-control" formControlName="myDate">
+    </div><br>
+    <div class="form-group">
+        <button class="btn  btn-success " (click)="AddItem()" type="button" >Save Task</button>
+    </div>
+</form>

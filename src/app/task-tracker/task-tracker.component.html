@@ -1,0 +1,50 @@
+<div class="myDiv">
+    <div class='row'>
+        <div class=' col-md-8'>
+            <div class="card ">
+                <div class="heder">
+                    <div class="card-header text-center bg-primary text-white">
+                        <h3>{{title}}</h3>
+                    </div>
+                    <div>
+                        <button class="btn btn-danger"(click)="saveTask()">Close</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <!--getting the input from dispaly.component.ts-->
+                    <app-display
+                    (addToList)="AddItem($event)">
+
+                    </app-display>
+                </div>
+                <!--if condition is true display below blocks-->
+                <div *ngIf="show">
+                    <div *ngFor = "let item of list" >
+
+                        <!--getting the input from task.component.ts-->
+                        <!--list data is used in task.component.ts as input-->
+                        <app-task
+
+                            (deletItem)="deleteItem($event)"
+
+                        [list]="item"></app-task>
+
+
+                    </div>
+                </div>
+
+                 <footer class="page-footer font-small mdb-color darken-3 pt-4">
+
+                         <h6 class=" text-center">Wel Come To angular</h6>
+                </footer>
+
+
+
+
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
